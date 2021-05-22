@@ -5,14 +5,20 @@ const path = require('path');
 
 
 app.use(express.static(path.join(__dirname, 'public')));
+
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
   next();
 });
-app.get('/', (req, res) => {
-  res.send('PROXY SERVER')
-})
+
+app.get('*/dp/:productId', (req, res) => {
+  res.sendFile(path.join(__dirname, '/./public/index.html'));
+});
+
+app.get('/:productId', (req, res) => {
+  res.sendFile(path.join(__dirname, '/./public/index.html'))
+});
 
 
 
