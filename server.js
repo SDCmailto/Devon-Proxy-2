@@ -20,8 +20,6 @@ app.get('/:productId', (req, res) => {
   res.sendFile(path.join(__dirname, '/./public/index.html'))
 });
 
-
-
 app.listen(port, () => {
   console.log(`Server now listening at http://localhost:${port}`);
 });
