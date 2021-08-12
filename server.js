@@ -7,7 +7,7 @@ const path = require('path');
 const cors = require('cors');
 const morgan = require('morgan');
 const { createProxyMiddleware } = require('http-proxy-middleware');
-const Images = 'http://18.144.11.40:3003';
+const Images = 'http://13.57.239.189:80';
 
 app.use(compression());
 app.use(express.static(path.join(__dirname, 'public')));
